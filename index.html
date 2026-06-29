@@ -197,6 +197,13 @@ ul{list-style:none}
   .footer-top{grid-template-columns:1fr}
   .linked-band{padding:32px;flex-direction:column;text-align:center}
 }
+
+/* líderes de la comisión */
+.leaders-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:36px}
+.leader{display:flex;align-items:center;gap:16px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 24px}
+.leader .lead-av{width:54px;height:54px;border-radius:50%;background:var(--accent-soft);color:var(--midnight);display:grid;place-items:center;font-weight:800;font-size:1.18rem;flex-shrink:0}
+.leader .lead-name{font-weight:700;font-size:1.08rem}
+.leader .lead-role{color:var(--muted);font-size:.9rem}
 </style>
 </head>
 <body>
@@ -373,6 +380,21 @@ ul{list-style:none}
         <h3>Reglamento de comisiones</h3>
         <p class="desc">Un marco claro y compartido para el funcionamiento de las comisiones y la participación de todas.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- LÍDERES DE LA COMISIÓN -->
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">Liderazgo</p>
+    <h2 class="section-title">Líderes de la comisión</h2>
+    <p class="lead">Quienes coordinan y facilitan el trabajo del equipo, dan seguimiento a los acuerdos y apoyan la coordinación general.</p>
+    <div class="leaders-grid">
+      <div class="leader"><div class="lead-av">CS</div><div><div class="lead-name">Celina Siffredi</div><div class="lead-role">Co-líder de la comisión</div></div></div>
+      <div class="leader"><div class="lead-av">BB</div><div><div class="lead-name">Belén Benvenuti</div><div class="lead-role">Co-líder de la comisión</div></div></div>
+      <div class="leader"><div class="lead-av">MC</div><div><div class="lead-name">Margarita Cejas</div><div class="lead-role">Co-líder de la comisión</div></div></div>
     </div>
   </div>
 </section>
