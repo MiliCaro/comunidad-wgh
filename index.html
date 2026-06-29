@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Comisión Comunidad · WGH Argentina — Tejiendo Redes entre Socias</title>
+<meta name="description" content="Comisión Comunidad de WGH Argentina. El espacio de las socias: encuentros, mentoría y vínculos entre mujeres líderes en salud. Actualizá tus datos y sumate a la comunidad." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+/* =====================================================================
+   WGH ARGENTINA · Landing Comisión COMUNIDAD
+   Acento: fucsia #C2185B · Base: midnight #0D2B35
+   Página single-file. Mismo sistema de diseño que el resto de comisiones.
+   ===================================================================== */
+:root{
+  --midnight:#0D2B35;
+  --aqua:#96D6DF;
+  --lime:#C8E535;
+  --gold:#F5A623;
+  --accent:#C2185B;          /* << color de acento de la comisión */
+  --accent-soft:rgba(194,24,91,.12);
+  --ink:#0D2B35;
+  --muted:#5a6a6f;
+  --line:#e6e9ea;
+  --bg-soft:#FCFAF9;
+  --footer-dark:#08222b;
+  --font:'Inter',system-ui,-apple-system,sans-serif;
+  --nav-h:70px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--nav-h)}
+body{font-family:var(--font);color:var(--ink);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{line-height:1.12;font-weight:800;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+button{font-family:var(--font);cursor:pointer;border:none;background:none}
+img{display:block;max-width:100%}
+ul{list-style:none}
+
+/* layout */
+.section{padding:88px 0}
+.container{width:100%;max-width:1140px;margin:0 auto;padding:0 24px}
+.center{text-align:center}
+.eyebrow{font-weight:700;font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.section-title{font-size:2.4rem;margin:12px 0 16px}
+.lead{font-size:1.12rem;color:var(--muted);max-width:680px}
+.lead.center{margin-left:auto;margin-right:auto}
+.text-muted{color:var(--muted)}
+.mt-s{margin-top:18px}.mt-m{margin-top:32px}.mt-l{margin-top:56px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.95rem;padding:13px 26px;border-radius:30px;transition:transform .15s ease,background .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease;border:2px solid transparent}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:18px;height:18px}
+.btn-accent{background:var(--accent);color:#fff}
+.btn-accent:hover{box-shadow:0 10px 24px var(--accent-soft)}
+.btn-dark{background:var(--midnight);color:#fff}
+.btn-lime{background:var(--lime);color:var(--midnight)}
+.btn-outline{background:transparent;color:var(--midnight);border-color:var(--midnight)}
+.btn-outline:hover{background:var(--midnight);color:#fff}
+.btn-outline-white{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
+.btn-outline-white:hover{background:#fff;color:var(--midnight)}
+.btn-sm{padding:9px 18px;font-size:.85rem}
+
+/* navbar */
+.navbar{position:sticky;top:0;z-index:100;background:var(--midnight);height:var(--nav-h);display:flex;align-items:center}
+.navbar .container{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:11px;cursor:pointer}
+.brand-text{color:#fff;font-weight:700;font-size:1rem;letter-spacing:.01em}
+.brand-text b{color:var(--accent);font-weight:800}
+.brand-text span{display:block;font-weight:500;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--aqua);margin-top:1px}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-link{color:#fff;font-size:.9rem;font-weight:500;padding:8px 12px;border-radius:6px;transition:color .15s}
+.nav-link:hover{color:var(--accent)}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.nav-toggle{display:none;color:#fff}
+.drawer-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90}
+.drawer{position:fixed;top:0;right:0;height:100%;width:80%;max-width:320px;background:var(--midnight);z-index:95;padding:24px;display:flex;flex-direction:column;gap:4px;box-shadow:-8px 0 30px rgba(0,0,0,.3)}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.drawer .nav-link{padding:13px 8px;font-size:1rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.drawer .nav-actions{flex-direction:column;align-items:stretch;margin-top:16px}
+.drawer .btn{justify-content:center}
+
+/* hero */
+.hero{position:relative;background:var(--midnight);color:#fff;overflow:hidden;padding:96px 0 104px}
+.hero::after{content:"";position:absolute;top:-120px;right:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,var(--accent) 0%,transparent 68%);opacity:.32;pointer-events:none}
+.hero .container{position:relative;z-index:1}
+.hero-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:48px;align-items:center}
+.hero h1{font-size:3.4rem;font-weight:900;margin:18px 0 20px;line-height:1.04}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p.sub{color:rgba(255,255,255,.85);font-size:1.18rem;max-width:560px}
+.hero-ctas{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+.tag-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:#fff;font-weight:600;font-size:.8rem;letter-spacing:.04em;padding:8px 16px;border-radius:24px}
+.tag-pill .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 var(--accent);animation:pulse 1.8s infinite}
+
+/* hero side card (intro / bienvenida) */
+.intro-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:30px}
+.intro-card .intro-label{color:var(--aqua);font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
+.intro-card h3{color:#fff;font-size:1.5rem;font-weight:800;margin:12px 0 10px;line-height:1.18}
+.intro-card p{color:rgba(255,255,255,.78);font-size:.95rem}
+.intro-card .intro-list{margin-top:18px;display:flex;flex-direction:column;gap:12px}
+.intro-card .intro-list li{display:flex;align-items:flex-start;gap:10px;color:rgba(255,255,255,.88);font-size:.93rem}
+.intro-card .intro-list svg{width:18px;height:18px;color:var(--accent);flex-shrink:0;margin-top:2px}
+
+/* generic cards */
+.cards-grid{display:grid;gap:22px;margin-top:40px}
+.cols-3{grid-template-columns:repeat(3,1fr)}
+.cols-2{grid-template-columns:repeat(2,1fr)}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px;transition:transform .18s ease,box-shadow .18s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(13,43,53,.10)}
+.card .ico{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);margin-bottom:16px}
+.card .ico svg{width:24px;height:24px}
+.card h3{font-size:1.18rem;font-weight:700;margin-bottom:8px}
+.card .desc{color:var(--muted);font-size:.96rem}
+.card .card-link{display:inline-flex;align-items:center;gap:6px;margin-top:16px;color:var(--accent);font-weight:600;font-size:.92rem}
+.card .card-link svg{width:16px;height:16px;transition:transform .15s}
+.card:hover .card-link svg{transform:translateX(3px)}
+
+/* badge (estado de iniciativas) */
+.badge{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;padding:5px 12px;border-radius:20px;background:var(--accent-soft);color:var(--accent);margin-bottom:14px}
+.badge.dev{background:rgba(245,166,35,.16);color:#b9791a}
+.badge.tbd{background:rgba(13,43,53,.08);color:var(--muted)}
+
+/* figures / stats band */
+.band{background:var(--midnight);color:#fff}
+.figures{display:grid;grid-template-columns:repeat(3,1fr)}
+.figure{padding:48px 24px;text-align:center;border-right:1px solid rgba(255,255,255,.12)}
+.figure:last-child{border-right:none}
+.figure .n{font-size:3rem;font-weight:900;color:var(--accent);line-height:1}
+.figure p{color:rgba(255,255,255,.82);font-size:.92rem;margin-top:10px;max-width:280px;margin-inline:auto}
+
+/* action / CTA cards (links) */
+.action-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+.action{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:14px;padding:30px}
+.action .ico{width:50px;height:50px;border-radius:12px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);margin-bottom:18px}
+.action .ico svg{width:26px;height:26px}
+.action h3{font-size:1.25rem;margin-bottom:8px}
+.action p{color:var(--muted);font-size:.95rem;flex:1;margin-bottom:20px}
+.action .btn{align-self:flex-start}
+
+/* soft section bg */
+.toolkit{background:var(--bg-soft)}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px;counter-reset:step}
+.step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px;position:relative}
+.step::before{counter-increment:step;content:counter(step);position:absolute;top:-16px;left:24px;width:38px;height:38px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;display:grid;place-items:center;font-size:1.05rem}
+.step h3{font-size:1.1rem;margin:14px 0 6px}
+.step p{color:var(--muted);font-size:.93rem}
+
+/* linkedin banner */
+.linked-band{background:linear-gradient(135deg,var(--midnight),#13414f);color:#fff;border-radius:18px;padding:48px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-top:40px}
+.linked-band .lb-text{max-width:600px}
+.linked-band h3{font-size:1.7rem;margin-bottom:10px}
+.linked-band p{color:rgba(255,255,255,.85);font-size:1rem}
+.linked-band .lb-ico{width:62px;height:62px;border-radius:14px;background:rgba(255,255,255,.1);display:grid;place-items:center;color:var(--aqua);flex-shrink:0;margin-bottom:16px}
+.linked-band .lb-ico svg{width:32px;height:32px}
+
+/* closing CTA */
+.closing{background:linear-gradient(135deg,var(--midnight),#13414f);color:#fff;text-align:center}
+.closing h2{font-size:2.4rem;margin-bottom:14px}
+.closing p{color:rgba(255,255,255,.85);max-width:620px;margin:0 auto 28px;font-size:1.1rem}
+.closing-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* footer */
+.footer{background:var(--footer-dark);color:#fff;padding:56px 0 28px}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:32px}
+.footer-brand p{color:rgba(255,255,255,.7);font-size:.92rem;max-width:300px;margin-top:12px}
+.footer h5{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--aqua);margin-bottom:14px;font-weight:700}
+.footer-col a{display:block;color:rgba(255,255,255,.78);padding:5px 0;font-size:.92rem}
+.footer-col a:hover{color:var(--accent)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding-top:22px;color:rgba(255,255,255,.55);font-size:.84rem;text-align:center}
+
+/* toast */
+.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(120px);background:var(--midnight);color:#fff;padding:13px 24px;border-radius:30px;font-weight:600;font-size:.9rem;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:300;transition:transform .3s ease;display:flex;align-items:center;gap:9px}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.toast svg{width:18px;height:18px;color:var(--lime)}
+
+@keyframes pulse{0%{box-shadow:0 0 0 0 var(--accent)}70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
+
+/* responsive */
+@media(max-width:940px){
+  .nav-links,.nav-actions{display:none}
+  .nav-toggle{display:inline-flex}
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+  .section{padding:60px 0}
+  .hero{padding:64px 0 72px}
+  .hero h1{font-size:2.5rem}
+  .section-title{font-size:1.9rem}
+  .cols-3,.cols-2,.action-grid,.steps,.figures{grid-template-columns:1fr}
+  .figure{border-right:none;border-bottom:1px solid rgba(255,255,255,.12)}
+  .figure:last-child{border-bottom:none}
+  .footer-top{grid-template-columns:1fr}
+  .linked-band{padding:32px;flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container">
+    <a class="brand" href="#inicio">
+      <svg width="38" height="38" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="18" fill="var(--accent)" opacity="0.18" stroke="var(--accent)" stroke-width="1.5"/>
+        <g stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round">
+          <line x1="20" y1="20" x2="34" y2="20"/><line x1="20" y1="20" x2="32.1" y2="27"/>
+          <line x1="20" y1="20" x2="27" y2="32.1"/><line x1="20" y1="20" x2="20" y2="34"/>
+          <line x1="20" y1="20" x2="12.9" y2="32.1"/><line x1="20" y1="20" x2="7.9" y2="27"/>
+          <line x1="20" y1="20" x2="6" y2="20"/><line x1="20" y1="20" x2="7.9" y2="13"/>
+          <line x1="20" y1="20" x2="12.9" y2="7.9"/><line x1="20" y1="20" x2="20" y2="6"/>
+          <line x1="20" y1="20" x2="27" y2="7.9"/><line x1="20" y1="20" x2="32.1" y2="13"/>
+        </g>
+        <circle cx="20" cy="20" r="2.6" fill="var(--accent)"/>
+      </svg>
+      <span class="brand-text">WGH <b>Comunidad</b><span>Argentina</span></span>
+    </a>
+    <div class="nav-links">
+      <a class="nav-link" href="#iniciativas">Iniciativas</a>
+      <a class="nav-link" href="#agenda">Agenda</a>
+      <a class="nav-link" href="#linkedin">Grupo privado</a>
+      <a class="nav-link" href="#proximas">Próximamente</a>
+    </div>
+    <div class="nav-actions">
+      <a class="btn btn-outline-white btn-sm" href="https://docs.google.com/forms/d/e/1FAIpQLScqLDzu-J6EiJbgPQUKtWQetaXp3przuzcqkksoCHruuaMMnQ/viewform" target="_blank" rel="noopener">Actualizá tus datos</a>
+      <a class="btn btn-accent btn-sm" href="#iniciativas">Sumate a la comunidad</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="inicio" class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="tag-pill"><span class="dot"></span> Comunidad WGH</span>
+        <h1>Tejer <em>redes</em> entre las mujeres que lideran la salud</h1>
+        <p class="sub">La Comisión Comunidad es el espacio de las socias: encuentros, mentoría y vínculos que nos hacen crecer juntas. Acá pertenecés, te conectás y construís con otras.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-accent" href="https://docs.google.com/forms/d/e/1FAIpQLScqLDzu-J6EiJbgPQUKtWQetaXp3przuzcqkksoCHruuaMMnQ/viewform" target="_blank" rel="noopener">Actualizá tus datos</a>
+          <a class="btn btn-outline-white" href="#iniciativas">Sumate a la comunidad</a>
+        </div>
+      </div>
+      <div class="intro-card">
+        <div class="intro-label">Tu lugar en la red</div>
+        <h3>Una comunidad que te sostiene y te impulsa</h3>
+        <p>Ser socia de WGH es formar parte de una red de mujeres líderes en salud que se acompañan, comparten oportunidades y abren puertas.</p>
+        <ul class="intro-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Encuentros para conocernos y crecer</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Mentoría entre socias</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Espacio privado y agenda compartida</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- INICIATIVAS / PROGRAMAS ACTIVOS -->
+<section id="iniciativas" class="section">
+  <div class="container">
+    <p class="eyebrow">Iniciativas</p>
+    <h2 class="section-title">Programas activos de la comunidad</h2>
+    <p class="lead">Espacios pensados para encontrarnos, acompañarnos y mantener viva la red. Elegí por dónde empezar y sumate.</p>
+    <div class="action-grid">
+      <div class="action">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M21 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+        <span class="badge tbd">Próxima fecha TBD</span>
+        <h3>Ciclo "Tejiendo Redes"</h3>
+        <p>Nuestros encuentros de comunidad: un espacio cálido para conocernos, compartir experiencias y tejer vínculos entre socias. Próxima fecha a confirmar.</p>
+        <a class="btn btn-outline" href="#agenda">Ver agenda →</a>
+      </div>
+      <div class="action">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-8-4.5-8-10a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 5.5-8 10-8 10Z"/></svg></div>
+        <span class="badge">Mentoría</span>
+        <h3>Programa de Madrinas</h3>
+        <p>Mentoría entre socias: una madrina te acompaña en tu camino profesional y personal dentro de la red. Nuestra referente es Celi. ¿Querés sumarte o ser madrina? Escribinos.</p>
+        <!-- TODO: agregar form o contacto de Celi -->
+        <a class="btn btn-accent" href="#">Escribinos para sumarte →</a>
+      </div>
+      <div class="action">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <span class="badge">Para todas las socias</span>
+        <h3>Actualizá tus datos</h3>
+        <p>Mantené tu ficha al día para no perderte ninguna novedad, encuentro ni oportunidad de la comunidad. Son solo unos minutos.</p>
+        <a class="btn btn-accent" href="https://docs.google.com/forms/d/e/1FAIpQLScqLDzu-J6EiJbgPQUKtWQetaXp3przuzcqkksoCHruuaMMnQ/viewform" target="_blank" rel="noopener">Completar el formulario →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIGURES BAND -->
+<section class="band">
+  <div class="container" style="padding:0">
+    <div class="figures">
+      <div class="figure"><div class="n">+1</div><p>red nacional de mujeres líderes en salud que crece con cada socia</p></div>
+      <div class="figure"><div class="n">3</div><p>programas activos: Tejiendo Redes, Madrinas y actualización de socias</p></div>
+      <div class="figure"><div class="n">100%</div><p>de pertenencia: este espacio es de las socias y para las socias</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- AGENDA Y EVENTOS -->
+<section id="agenda" class="section toolkit">
+  <div class="container">
+    <p class="eyebrow">Agenda</p>
+    <h2 class="section-title">Agenda y eventos de la comunidad</h2>
+    <p class="lead">Mirá lo que se viene y compartí tus propios eventos para que toda la red pueda sumarse.</p>
+    <div class="cards-grid cols-2">
+      <div class="action">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+        <h3>Calendario de eventos</h3>
+        <p>Consultá el calendario compartido de la comunidad y no te pierdas ningún encuentro, charla o actividad de las socias.</p>
+        <a class="btn btn-accent" href="https://docs.google.com/spreadsheets/d/1Iree3oxf0GM6L53o1jlUN7KSe8PIyyCvFWsif--OE8M" target="_blank" rel="noopener">Ver calendario →</a>
+      </div>
+      <div class="action">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6M9 15h6"/></svg></div>
+        <h3>Reportá tu evento</h3>
+        <p>¿Organizás una actividad o querés contarnos de un evento? Cargalo en el formulario y lo sumamos al calendario de la comunidad.</p>
+        <a class="btn btn-outline" href="https://docs.google.com/forms/d/e/1FAIpQLSeOtRh3i6u74TTJCWNQZledHM2f-1kO2G1iRVTKADjRPKIpeQ/viewform" target="_blank" rel="noopener">Reportar evento →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESPACIO PRIVADO / LINKEDIN -->
+<section id="linkedin" class="section">
+  <div class="container">
+    <p class="eyebrow">Espacio privado</p>
+    <h2 class="section-title">Nuestro lugar de encuentro online</h2>
+    <p class="lead">La conversación de la comunidad sigue todos los días en nuestro grupo privado de LinkedIn: novedades, oportunidades y vínculos profesionales entre socias.</p>
+    <div class="linked-band">
+      <div class="lb-text">
+        <div class="lb-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></div>
+        <h3>Grupo privado de LinkedIn</h3>
+        <p>Un espacio exclusivo para socias: compartí logros, oportunidades laborales y seguí conectada con la red entre encuentro y encuentro.</p>
+      </div>
+      <a class="btn btn-lime" href="https://www.linkedin.com/groups/16483058/" target="_blank" rel="noopener">Unite al grupo privado →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRÓXIMAS INICIATIVAS -->
+<section id="proximas" class="section toolkit">
+  <div class="container">
+    <p class="eyebrow">Próximamente</p>
+    <h2 class="section-title">Próximas iniciativas de la comunidad</h2>
+    <p class="lead">Estamos preparando nuevos espacios para seguir fortaleciendo la red. Esto es lo que viene.</p>
+    <div class="cards-grid cols-2">
+      <div class="card">
+        <span class="badge dev">En desarrollo</span>
+        <h3>Ciclos de líderes 1:1</h3>
+        <p class="desc">Conversaciones uno a uno con referentes de la salud para aprender de sus trayectorias y abrir nuevas oportunidades.</p>
+      </div>
+      <div class="card">
+        <span class="badge dev">En desarrollo</span>
+        <h3>Kit digital</h3>
+        <p class="desc">Una caja de herramientas con recursos, plantillas y materiales para que las socias potencien su liderazgo.</p>
+      </div>
+      <div class="card">
+        <span class="badge dev">En desarrollo</span>
+        <h3>Beca socia invitada</h3>
+        <p class="desc">Un programa para acercar a la comunidad a mujeres que aún no son socias y ampliar la red.</p>
+      </div>
+      <div class="card">
+        <span class="badge dev">En desarrollo</span>
+        <h3>Reglamento de comisiones</h3>
+        <p class="desc">Un marco claro y compartido para el funcionamiento de las comisiones y la participación de todas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING CTA -->
+<section class="section closing">
+  <div class="container">
+    <h2>Tu lugar está acá</h2>
+    <p>La comunidad se teje con cada una de nosotras. Actualizá tus datos para no perderte nada y sumate a la red de mujeres que lideran la salud en Argentina.</p>
+    <div class="closing-ctas">
+      <a class="btn btn-accent" href="https://docs.google.com/forms/d/e/1FAIpQLScqLDzu-J6EiJbgPQUKtWQetaXp3przuzcqkksoCHruuaMMnQ/viewform" target="_blank" rel="noopener">Actualizá tus datos</a>
+      <a class="btn btn-outline-white" href="https://www.linkedin.com/groups/16483058/" target="_blank" rel="noopener">Unite al grupo privado</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="brand-text" style="font-size:1.1rem">WGH <b>Argentina</b></span>
+        <p>Comisión Comunidad · Women in Global Health Argentina. El espacio de las socias: encuentros, mentoría y vínculos entre mujeres que lideran la salud.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Comunidad</h5>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScqLDzu-J6EiJbgPQUKtWQetaXp3przuzcqkksoCHruuaMMnQ/viewform" target="_blank" rel="noopener">Actualizar datos</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeOtRh3i6u74TTJCWNQZledHM2f-1kO2G1iRVTKADjRPKIpeQ/viewform" target="_blank" rel="noopener">Reportar evento</a>
+        <a href="https://docs.google.com/spreadsheets/d/1Iree3oxf0GM6L53o1jlUN7KSe8PIyyCvFWsif--OE8M" target="_blank" rel="noopener">Calendario</a>
+        <a href="https://www.linkedin.com/groups/16483058/" target="_blank" rel="noopener">Grupo de LinkedIn</a>
+      </div>
+      <div class="footer-col">
+        <h5>Comisiones WGH</h5>
+        <a href="#">Consulta</a>
+        <a href="#">Coloquio</a>
+        <a href="#">Comunidad</a>
+        <a href="#">Alianza</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Women in Global Health Argentina · Comisión Comunidad. Hecho con 💚 por la red.</div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span id="toastMsg">Listo</span></div>
+
+<script>
+/* ---- toast ---- */
+let toastT;
+function showToast(msg){
+  const t=document.getElementById('toast');
+  document.getElementById('toastMsg').textContent=msg;
+  t.classList.add('show'); clearTimeout(toastT);
+  toastT=setTimeout(()=>t.classList.remove('show'),2400);
+}
+
+/* ---- mobile drawer ---- */
+document.getElementById('navToggle').addEventListener('click',()=>{
+  const bd=document.createElement('div'); bd.className='drawer-backdrop';
+  const dr=document.createElement('div'); dr.className='drawer';
+  dr.innerHTML=`
+    <div class="drawer-head">
+      <span class="brand-text">WGH <b>Comunidad</b></span>
+      <button id="drClose" style="color:#fff"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    </div>
+    <a class="nav-link" href="#iniciativas">Iniciativas</a>
+    <a class="nav-link" href="#agenda">Agenda</a>
+    <a class="nav-link" href="#linkedin">Grupo privado</a>
+    <a class="nav-link" href="#proximas">Próximamente</a>
+    <div class="nav-actions">
+      <a class="btn btn-outline-white" href="https://docs.google.com/forms/d/e/1FAIpQLScqLDzu-J6EiJbgPQUKtWQetaXp3przuzcqkksoCHruuaMMnQ/viewform" target="_blank" rel="noopener">Actualizá tus datos</a>
+      <a class="btn btn-accent" href="#iniciativas">Sumate a la comunidad</a>
+    </div>`;
+  document.body.append(bd,dr);
+  const close=()=>{bd.remove();dr.remove()};
+  bd.onclick=close; dr.querySelector('#drClose').onclick=close;
+  dr.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));
+});
+</script>
+</body>
+</html>
